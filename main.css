@@ -100,6 +100,8 @@ a{
 	height: 40px;
 	position: absolute;
 	bottom:4%;
+	left: 50%;
+	transform: translateX(-50%);
 	background-size:100% 100%;
     background-repeat: no-repeat;
 }
