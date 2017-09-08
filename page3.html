@@ -14,8 +14,8 @@
 <h1 id="cha">猜猜是哪个老师？</h1>
 	<div class="chas">
 		<p class="charas answer_1">特征1：<span id="_a"></span></p>
-		<li class="charas answer_2">特征2：<span id="_b"></span></li>
-		<li class="charas answer_3">特征3：<span id="_c"></span></li>
+		<p class="charas answer_2">特征2：<span id="_b"></span></p>
+		<p class="charas answer_3">特征3：<span id="_c"></span></p>
 		<input type="text" name="answer" id="answer" class="charas" placeholder="答案写这里">
 	</div>
 </li>
@@ -23,6 +23,17 @@
 
 
 <script type="text/javascript">
+
+	// respone
+	window.onload = window.onresize = function(){
+    	pageResponse({
+	        selectors : 'body',     //模块选择器，使用querySelectorAll的方法
+	        mode : 'auto',     // auto || contain || cover
+	        width : '414',      //输入页面的宽度，只支持输入数值，默认宽度为320px
+	        height : '736'      //输入页面的高度，只支持输入数值，默认高度为504px
+    	})
+	}
+
 	// 转换js传值
 	var base = new Base64();
 	var tmpArr;
@@ -32,14 +43,25 @@
 	var _a,_b,_c,_d;
 	if(URL.lastIndexOf("?")!=-1){
 		QueryString= URL.substring(URL.lastIndexOf("?")+1,URL.length);
-		tmpArr=QueryString.split("=&");
-		for (i=0; i<=tmpArr.length; i++){
+		tmpArr=QueryString.split("&");
+		for (i=0; i<=tmpArr.length-1; i++){
 			answers.push(tmpArr[i]);
 		}
 	}
 	else{
 		QueryString = "";
 	}
+
+	while(answers.length > 4){
+		answers.pop();
+	}
+
+	for(j=0; j<answers.length; j++){
+		if(answers[j].indexOf('=') !== -1){
+			answers[j]= answers[j].slice(0,-1);
+		};
+	}
+
 
 	_a = base.decode(answers[0]);
 	_b = base.decode(answers[1]);
