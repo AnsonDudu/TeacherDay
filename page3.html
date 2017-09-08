@@ -57,7 +57,9 @@
 	}
 
 	for(j=0; j<answers.length; j++){
-		answers[j]= answers[j].slice(0,-1);
+		if((answers[j].charAt(answers[j].length-1))=== '='){
+			answers[j]= answers[j].slice(0,-1);
+		}
 	}
 
 
