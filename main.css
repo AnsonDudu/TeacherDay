@@ -3,7 +3,6 @@ body{
 	height: 100%;
 	min-height: 736px;
 	background-image: url(images/bg.png);
-/*	background-position: middle;*/
 	-webkit-background-size: 100% 100%;
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
@@ -37,11 +36,6 @@ body{
 	margin-bottom: 20px;
 }
 
-
-/*.button:active {
-	margin-top: 25px;
-	margin-bottom: 15px;
-}*/
 .button span {
 	vertical-align: middle;
 }
@@ -157,66 +151,65 @@ a{
 
 
 
-@media screen and (min-width: 350px) and (max-width: 360px){
+@media screen and (min-height: 520px) and (max-height: 570px){
 	body{
 	width: 100%;
 	height: 100%;
-	min-height: 640px;
+	min-height: 568px;
 	background-image: url(images/bg.png);
-/*	background-position: middle;*/
 	-webkit-background-size: 100% 100%;
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 	}
 
 	.chas{
-		height: 640px;
+		height: 568px;
 	}
 	#cha_1{
 		position: relative;
-		top: 55%;
+		top: 53%;
 	}
 	#cha_2{
 		position: relative;
-		top: 60%;
+		top: 57%;
 	}
 
 	#cha_3{
 		position: relative;
-		top: 65%;
+		top: 61%;
 	}
 
 	#name{
 		position: relative;
-		top: 70%;
+		top: 65%;
 	}
 
 	.answer_1{
 		position: relative;
-		top: 55%;
+		top: 53%;
 	}
 	.answer_2{
 		position: relative;
-		top: 60%;
+		top: 57%;
 	}
 	.answer_3{
 		position: relative;
-		top: 65%;
+		top: 61%;
 	}
 
 	#answer{
 		position: relative;
-		top: 70%;
+		top: 65%;
 	}
 
 
 }
 
-@media screen and (min-width: 320px) and (max-width: 350px){
+@media screen and (min-height: 580px) and (max-height: 640px){
 	body{
 	width: 100%;
 	height: 100%;
-	min-height: 568px;
+	min-height: 640px;
 	background-image: url(images/bg.png);
 	/*	background-position: middle;*/
 	-webkit-background-size: 100% 100%;
