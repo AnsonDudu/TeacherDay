@@ -17,7 +17,7 @@ var event = function(){
 
 var inputs = document.getElementsByTagName('input');
 for(i = 0; i<inputs.length; i++){
-	inputs[i].addEventListener('touchstart',event);
+	inputs[i].addEventListener('touch',event);
 	inputs[i].addEventListener('touchend',event);
 	inputs[i].addEventListener('onfocusout',event);
 }
