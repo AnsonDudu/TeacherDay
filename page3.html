@@ -44,7 +44,7 @@
 	if(URL.lastIndexOf("?")!=-1){
 		QueryString= URL.substring(URL.lastIndexOf("?")+1,URL.length);
 		tmpArr=QueryString.split("&");
-		for (i=0; i<=tmpArr.length-1; i++){
+		for (i=0; i<=tmpArr.length; i++){
 			answers.push(tmpArr[i]);
 		}
 	}
@@ -57,9 +57,7 @@
 	}
 
 	for(j=0; j<answers.length; j++){
-		if(answers[j].indexOf('=') !== -1){
-			answers[j]= answers[j].slice(0,-1);
-		};
+		answers[j]= answers[j].slice(0,-1);
 	}
 
 
