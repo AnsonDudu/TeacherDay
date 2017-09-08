@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,target-density,dpi=high-dpi,initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>猜猜您的老师</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<link rel="stylesheet" type="text/css" href="normalize.css">
+	<script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+	<script src="js/bmob-min.js"></script>
+	<script src="js/base64.js"></script>
+</head>
+<body>
+<h1 id="cha">猜猜是哪个老师？</h1>
+	<div class="chas">
+		<p class="charas answer_1">特征1：<span id="_a"></span></p>
+		<li class="charas answer_2">特征2：<span id="_b"></span></li>
+		<li class="charas answer_3">特征3：<span id="_c"></span></li>
+		<input type="text" name="answer" id="answer" class="charas" placeholder="答案写这里">
+	</div>
+</li>
+<div id="button2" class="button"></div>
+
+
+<!-- <script type="text/javascript" src="js/main.js"></script> -->
+<script type="text/javascript">
+	// 转换js传值
+	var base = new Base64();
+	var tmpArr;
+	var QueryString;
+	var URL = document.location.toString();
+	var answers = [];
+	var _a,_b,_c,_d;
+	if(URL.lastIndexOf("?")!=-1){
+		QueryString= URL.substring(URL.lastIndexOf("?")+1,URL.length);
+		tmpArr=QueryString.split("&");
+		for (i=0; i<=tmpArr.length; i++){
+			answers.push(tmpArr[i]);
+		}
+	}
+	else{
+		QueryString = "";
+	}
+
+	_a = base.decode(answers[0]);
+	_b = base.decode(answers[1]);
+	_c = base.decode(answers[2]);
+	_d = base.decode(answers[3]);
+
+	$("#_a").html(_a);
+	$("#_b").html(_b);
+	$("#_c").html(_c);
+
+	var button = document.getElementById('button2');
+	button.addEventListener('click',function(){
+		if($("#answer")[0].value == _d){
+			alert('right');
+		}
+		else{
+			alert('try again');
+		}
+	})
+</script>
+</body>
+</html>
