@@ -2,6 +2,17 @@
 var LocalData;
 var base = new Base64();
 
+// respone
+window.onload = window.onresize = function(){
+    pageResponse({
+        selectors : 'body',     //模块选择器，使用querySelectorAll的方法
+        mode : 'auto',     // auto || contain || cover
+        width : '414',      //输入页面的宽度，只支持输入数值，默认宽度为320px
+        height : '736'      //输入页面的高度，只支持输入数值，默认高度为504px
+    })
+}
+
+
 // 绑定input事件
 
 var event = function(){
@@ -17,10 +28,14 @@ var event = function(){
 
 var inputs = document.getElementsByTagName('input');
 for(i = 0; i<inputs.length; i++){
-	inputs[i].addEventListener('touch',event);
+	inputs[i].addEventListener('touchstart',event);
+	inputs[i].addEventListener('touchmove',event);
+	inputs[i].addEventListener('touchcancel',event);
 	inputs[i].addEventListener('touchend',event);
 	inputs[i].addEventListener('onfocusout',event);
 }
+
+$('input').bind('focusout',event);
 
 
 
