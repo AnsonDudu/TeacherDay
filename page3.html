@@ -75,11 +75,8 @@
 	$("#_b").html(_b);
 	$("#_c").html(_c);
 
-	function showdiv(targetid,objN){
-   
+	function showdiv(targetid){
       var target=document.getElementById(targetid);
-      var clicktext=document.getElementById(objN)
-
             if (target.style.display=="block"){
                 target.style.display="none";
             } else {
@@ -92,10 +89,10 @@
 	button.addEventListener('click',function(){
 		console.log($("#answer")[0].value)
 		if($("#answer")[0].value == _d){
-			showdiv('success')
+			showdiv('success');
 		}
 		else{
-			var conirm = confirm("打错了,要继续吗?");
+			var conirm = confirm("答错了,要继续吗?");
 			if(conirm){
 			}
 			else{
