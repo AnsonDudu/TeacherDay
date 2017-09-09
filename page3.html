@@ -18,9 +18,12 @@
 		<p class="charas answer_3">特征3：<span id="_c"></span></p>
 		<input type="text" name="answer" id="answer" class="charas" placeholder="答案写这里">
 	</div>
+
 </li>
 <div id="button2" class="button"></div>
-
+<div class="success invisible mook" id="success">
+	<p>答对了，你也想出题就<a href="index.html">点击这里</a></p>
+</div>
 
 <script type="text/javascript">
 
@@ -72,16 +75,36 @@
 	$("#_b").html(_b);
 	$("#_c").html(_c);
 
+	function showdiv(targetid,objN){
+   
+      var target=document.getElementById(targetid);
+      var clicktext=document.getElementById(objN)
+
+            if (target.style.display=="block"){
+                target.style.display="none";
+            } else {
+                target.style.display="block";
+            }
+   
+}
+
 	var button = document.getElementById('button2');
 	button.addEventListener('click',function(){
 		console.log($("#answer")[0].value)
 		if($("#answer")[0].value == _d){
-			alert('right');
+			showdiv('success')
 		}
 		else{
-			alert('try again');
+			var conirm = confirm("打错了,要继续吗?");
+			if(conirm){
+			}
+			else{
+				window.open('index.html');
+			}
 		}
 	})
+
+
 </script>
 </body>
 </html>
